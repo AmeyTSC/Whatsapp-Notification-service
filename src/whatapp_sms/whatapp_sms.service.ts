@@ -39,7 +39,7 @@ export class WhatappSmsService {
       youtubeUrl,
     });
 
-    const phoneNumber = phoneNo; // ? phoneNo.slice(-10) : undefined;
+    const phoneNumber = phoneNo ? phoneNo.slice(-10) : undefined;
     const urlIncludingPdf = invoiceUrl?.match(/.*\.pdf/i)?.[0] || '';
     const userid = process.env.SMSG_USERID || '2000197692';
     const userpwd = process.env.SMSG_PASSWORD || '9LzraftQ';
