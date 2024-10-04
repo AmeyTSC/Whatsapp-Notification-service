@@ -12,7 +12,7 @@ export class WhatappSmsController {
   @Post('send')
   async whatsapp_sms(@Body() body: { template_attributes: TemplateAttributes }) {
     try {
-      const templateInfo = await this.whatsappSmsService.getTemplateDetail(body.template_attributes); 
+      const templateInfo = await this.whatsappSmsService.getTemplateDetail(body.template_attributes);  
       const whatsappResponse = await smsSent(templateInfo);
       await this.whatsapp_logs.createLog(whatsappResponse,templateInfo);
       return {

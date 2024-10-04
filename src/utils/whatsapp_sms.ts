@@ -2,7 +2,6 @@ import axios from "axios";
 
 export const smsSent = async (templateInfo:any) => {
   let config = templateInfo;
-  console.log(config.url);
   try {
     const response = await axios.post(config.url, null, config);
     return response.data;
